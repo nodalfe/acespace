@@ -1,0 +1,254 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css");
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════
+   ACESPACE — globals.css
+   acespace-homepage.html <style> 그대로 이식
+   ═══════════════════════════════════════════════ */
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+
+:root{
+  --forest:#1C1814;
+  --forest2:#100E0B;
+  --noto-italic: 'Noto Serif KR', serif;
+
+  --sage:#8B7355;
+  --sage-lt:#E0D0BC;
+  --cream:#F2EDE3;
+  --ivory:#FAF7F2;
+  --terra:#C4582A;
+  --amber:#D4943A;
+  --fog:#8C8480;
+  --sand:#C8B898;
+  --brown:#8B7355;
+  --ink:#0D0E0C;
+  --mist:rgba(13,14,12,.08);
+}
+
+body{background:var(--ivory);color:var(--ink);font-family:'Pretendard',sans-serif;font-weight:400;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* ── CURSOR ── */
+.cur{width:5px;height:5px;background:var(--terra);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
+.cur-r{width:28px;height:28px;border:1px solid rgba(196,88,42,.3);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s,border-color .3s}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:20px 52px;transition:background .4s,backdrop-filter .4s;background:rgba(28,24,20,.45);backdrop-filter:blur(8px)}
+nav.scrolled{background:rgba(20,16,14,.97);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06)}
+.n-logo{font-family:'DM Sans',sans-serif;font-weight:600;font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--ivory)}
+.n-menu{display:flex;align-items:center;gap:36px}
+.n-link{font-family:'Pretendard',sans-serif;font-weight:500;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:rgba(242,237,227,.82);text-decoration:none;transition:color .25s}
+.n-link:hover{color:var(--ivory);letter-spacing:.14em}
+.n-cta{font-family:'Pretendard',sans-serif;font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--ivory);padding:10px 24px;text-decoration:none;transition:background .25s,transform .2s}
+.n-cta:hover{background:var(--cream);transform:translateY(-1px)}
+
+/* ══════════════════════
+   HERO
+══════════════════════ */
+.s-hero{min-height:100vh;background:var(--forest);display:flex;flex-direction:column;position:relative;overflow:hidden}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(224,208,188,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(224,208,188,.04) 1px,transparent 1px);background-size:72px 72px;pointer-events:none}
+.hero-vline{position:absolute;top:0;bottom:0;width:1px;background:rgba(224,208,188,.06)}
+.hero-vline1{right:160px} .hero-vline2{right:320px}
+.hero-corner{position:absolute;top:108px;right:52px;display:flex;flex-direction:column;align-items:flex-end;gap:8px;animation:fu .8s ease .6s both}
+.hc-tag{font-family:'DM Sans',sans-serif;font-weight:300;font-size:9px;letter-spacing:.32em;text-transform:uppercase;color:rgba(224,208,188,.3)}
+.hc-badge{font-family:'DM Sans',sans-serif;font-weight:300;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(224,208,188,.28);border:0.5px solid rgba(224,208,188,.12);padding:6px 14px;display:flex;align-items:center;gap:8px}
+.hc-dot{width:5px;height:5px;border-radius:50%;background:var(--sand);animation:blink 2.5s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.15}}
+
+.hero-body{flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding:0 52px 88px;position:relative;z-index:2}
+.hero-tag{font-family:'Pretendard',sans-serif;font-weight:500;font-size:13px;letter-spacing:.06em;color:rgba(224,208,188,.78);margin-bottom:36px;animation:fu .8s ease .2s both}
+.hero-h1{font-family:'Pretendard',sans-serif;font-weight:900;font-size:clamp(44px,7.5vw,96px);line-height:1.15;letter-spacing:-.035em;color:var(--ivory);animation:fu 1s ease .35s both}
+.hero-h1 .hl{color:rgba(200,184,152,.9)}
+.hero-h1 .it{font-family:'Noto Serif KR',serif;font-weight:300;font-style:italic;font-size:.55em;color:rgba(242,237,227,.52);display:block;margin-top:4px;margin-bottom:0;line-height:1.5;letter-spacing:-.01em}
+.hero-h1 .b3{display:block;line-height:1.1;margin-top:0}
+
+.hero-foot{position:absolute;bottom:52px;left:52px;right:52px;display:flex;justify-content:space-between;align-items:flex-end;z-index:2;animation:fu .8s ease .85s both}
+.hero-en{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:clamp(13px,1.8vw,18px);color:rgba(242,237,227,.42);line-height:1.5;letter-spacing:.01em}
+.hero-scroll{display:flex;flex-direction:column;align-items:center;gap:8px}
+.hero-scroll-txt{font-family:'DM Sans',sans-serif;font-weight:300;font-size:9px;letter-spacing:.3em;color:rgba(224,208,188,.25);text-transform:uppercase}
+.hero-scroll-line{width:1px;height:44px;background:rgba(224,208,188,.12);position:relative;overflow:hidden}
+.hero-scroll-line::after{content:'';position:absolute;top:-100%;width:100%;height:100%;background:var(--sand);animation:sd 2s ease-in-out infinite}
+@keyframes sd{0%{top:-100%}80%,100%{top:200%}}
+@keyframes fu{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+
+/* ── TICKER ── */
+.ticker{background:var(--terra);overflow:hidden;padding:13px 0}
+.t-track{display:flex;width:max-content;animation:tick 32s linear infinite}
+.t-item{display:flex;align-items:center}
+.t-w{font-family:'DM Sans',sans-serif;font-weight:400;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ivory);padding:0 26px}
+.t-s{color:rgba(242,237,227,.28)}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ══════════════════════
+   S2. STORY — 감성
+══════════════════════ */
+.s-story{background:var(--ivory);padding:128px 52px;display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:center}
+.st-left{}
+.st-num{font-family:'Fraunces',serif;font-weight:900;font-size:130px;line-height:1;color:rgba(28,24,20,.05);letter-spacing:-.05em;user-select:none;margin-bottom:-24px}
+.st-eyebrow{font-family:'DM Sans',sans-serif;font-weight:300;font-size:9px;letter-spacing:.38em;text-transform:uppercase;color:var(--fog);margin-bottom:18px;display:flex;align-items:center;gap:12px}
+.st-eyebrow::before{content:'';width:24px;height:1px;background:var(--fog)}
+.st-h2{font-family:'Pretendard',sans-serif;font-weight:900;font-size:clamp(36px,5vw,64px);line-height:1.08;letter-spacing:-.03em;color:var(--ink)}
+.st-h2 em{font-family:'Noto Serif KR',serif;font-style:italic;font-weight:400;font-size:.92em;color:#8B7355;display:block;line-height:1.3}
+.st-right{display:flex;flex-direction:column;gap:28px}
+.st-quote{font-size:17px;line-height:2;color:rgba(13,14,12,.76);letter-spacing:.015em;padding-left:22px;border-left:2px solid var(--sand)}
+.st-quote strong{color:var(--ink);font-weight:600}
+.st-hr{width:36px;height:1px;background:rgba(139,115,85,.3)}
+.st-body{font-size:14.5px;line-height:2;color:rgba(13,14,12,.62);letter-spacing:.02em;font-weight:400}
+.st-sub{font-family:'Noto Serif KR',serif;font-weight:300;font-style:italic;font-size:16px;color:#8B7355;letter-spacing:.02em}
+
+/* ══════════════════════
+   S3. 5분 — 실용
+══════════════════════ */
+.s-five{background:#4A3728;padding:100px 52px;display:flex;justify-content:space-between;align-items:center;gap:60px;position:relative;overflow:hidden}
+.five-bg-n{position:absolute;right:-30px;top:50%;transform:translateY(-50%);font-family:'Fraunces',serif;font-weight:900;font-size:clamp(220px,38vw,420px);line-height:1;color:rgba(255,255,255,.06);letter-spacing:-.08em;pointer-events:none;user-select:none}
+.five-l{position:relative;z-index:2;flex-shrink:0}
+.five-eyebrow{font-family:'DM Sans',sans-serif;font-weight:300;font-size:9px;letter-spacing:.38em;text-transform:uppercase;color:rgba(224,208,188,.6);margin-bottom:18px}
+.five-h{font-family:'Pretendard',sans-serif;font-weight:900;font-size:clamp(56px,9vw,100px);line-height:1.05;letter-spacing:-.04em;color:var(--ivory)}
+.five-sub{font-family:'Noto Serif KR',serif;font-weight:300;font-style:italic;font-size:clamp(15px,2vw,22px);color:rgba(242,237,227,.7);margin-top:16px;line-height:1.6}
+.five-r{position:relative;z-index:2;display:flex;flex-direction:column;gap:0;max-width:300px}
+.five-feat{padding:20px 0;border-bottom:1px solid rgba(224,208,188,.18)}
+.five-feat:first-child{border-top:1px solid rgba(224,208,188,.18)}
+.ff-num{font-family:'DM Sans',sans-serif;font-weight:300;font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:rgba(224,208,188,.45);margin-bottom:5px}
+.ff-title{font-family:'DM Sans',sans-serif;font-weight:600;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ivory);margin-bottom:4px}
+.ff-body{font-size:12px;color:rgba(242,237,227,.72);line-height:1.75;letter-spacing:.02em}
+
+/* ══════════════════════
+   S4. MATERIAL — 실용
+══════════════════════ */
+.s-mat{background:var(--ink);padding:120px 52px;position:relative;overflow:hidden}
+.mat-bg-w{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Fraunces',serif;font-weight:900;font-style:italic;font-size:clamp(140px,22vw,260px);color:rgba(224,208,188,.04);white-space:nowrap;pointer-events:none;user-select:none;letter-spacing:-.04em}
+.mat-in{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;position:relative;z-index:2}
+.mat-l{}
+.mat-ey{font-family:'DM Sans',sans-serif;font-weight:300;font-size:9px;letter-spacing:.38em;text-transform:uppercase;color:rgba(224,208,188,.5);margin-bottom:24px;display:flex;align-items:center;gap:12px}
+.mat-ey::before{content:'';width:24px;height:1px;background:rgba(224,208,188,.3)}
+.mat-h{font-family:'Pretendard',sans-serif;font-weight:900;font-size:clamp(48px,8vw,100px);line-height:1.05;letter-spacing:-.04em;color:var(--ivory);margin-bottom:0}
+.mat-h em{font-family:'Noto Serif KR',serif;font-style:italic;font-weight:400;font-size:.88em;color:rgba(200,184,152,.85);display:block;line-height:1.25}
+.mat-decl{font-size:14.5px;line-height:2;color:rgba(242,237,227,.72);padding-left:20px;border-left:2px solid var(--sand);margin:28px 0;letter-spacing:.02em}
+.mat-decl strong{color:var(--ivory);font-weight:600}
+.mat-badges{display:flex;gap:8px;flex-wrap:wrap}
+.mat-badge{font-family:'DM Sans',sans-serif;font-weight:600;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;border:1px solid rgba(200,184,152,.35);color:var(--sand);padding:7px 14px}
+.mat-r{padding-top:12px}
+.mat-list{display:flex;flex-direction:column}
+.mat-row{display:grid;grid-template-columns:28px 1fr auto;gap:14px;align-items:center;padding:17px 0;border-bottom:1px solid rgba(242,237,227,.06);transition:padding-left .2s}
+.mat-row:first-child{border-top:1px solid rgba(242,237,227,.06)}
+.mat-row:hover{padding-left:5px}
+.mat-idx{font-family:'DM Sans',sans-serif;font-weight:300;font-size:10px;color:rgba(224,208,188,.35);letter-spacing:.1em}
+.mat-name{font-family:'DM Sans',sans-serif;font-weight:600;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ivory);margin-bottom:2px}
+.mat-desc{font-size:11.5px;color:rgba(242,237,227,.58);letter-spacing:.02em;line-height:1.7;font-weight:400}
+.mat-tag{font-family:'DM Sans',sans-serif;font-weight:300;font-size:9px;letter-spacing:.15em;text-transform:uppercase;border:0.5px solid rgba(139,115,85,.4);color:var(--sand);padding:4px 9px;white-space:nowrap}
+
+/* ══════════════════════
+   S5. PRODUCTS
+══════════════════════ */
+.s-prod{background:var(--cream);padding:120px 52px}
+.prod-top{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px}
+.prod-ey{font-family:'DM Sans',sans-serif;font-weight:300;font-size:9px;letter-spacing:.38em;text-transform:uppercase;color:var(--fog);margin-bottom:14px}
+.prod-h{font-family:'Pretendard',sans-serif;font-weight:900;font-size:clamp(36px,5vw,64px);line-height:1.08;letter-spacing:-.03em;color:var(--ink)}
+.prod-h em{font-family:'Noto Serif KR',serif;font-style:italic;font-weight:400;font-size:.96em;color:#8B7355;display:block;line-height:1.3}
+.prod-note{font-size:12.5px;line-height:2;color:var(--fog);text-align:right;letter-spacing:.02em;max-width:200px}
+
+/* Product Lines */
+.prod-lines{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(13,14,12,.1)}
+.pl-cat{background:#fff;padding:52px 48px}
+.pl-cat-living{background:var(--ivory)}
+.pl-cat-head{margin-bottom:40px;padding-bottom:32px;border-bottom:1px solid rgba(13,14,12,.08)}
+.pl-cat-label{font-family:'DM Sans',sans-serif;font-weight:400;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--fog);margin-bottom:8px}
+.pl-cat-title{font-family:'Pretendard',sans-serif;font-weight:900;font-size:36px;letter-spacing:-.03em;color:var(--ink);margin-bottom:8px;line-height:1.1}
+.pl-cat-desc{font-size:13px;line-height:1.85;color:rgba(13,14,12,.5);letter-spacing:.02em;margin-bottom:16px}
+.pl-launch{display:inline-block;font-family:'Pretendard',sans-serif;font-weight:700;font-size:10px;letter-spacing:.12em;color:var(--terra);background:rgba(196,88,42,.08);border:1px solid rgba(196,88,42,.25);padding:5px 14px}
+.pl-items{display:flex;flex-direction:column;gap:0}
+.pl-item{padding:20px 0;border-bottom:1px solid rgba(13,14,12,.07);transition:background .2s}
+.pl-item:first-child{border-top:1px solid rgba(13,14,12,.07)}
+.pl-item:hover{background:rgba(13,14,12,.02);margin:0 -16px;padding:20px 16px}
+.pl-item-top{display:flex;align-items:baseline;gap:12px;margin-bottom:5px}
+.pl-name{font-family:'Pretendard',sans-serif;font-weight:700;font-size:15px;letter-spacing:-.01em;color:var(--ink)}
+.pl-tbd{font-family:'DM Sans',sans-serif;font-weight:400;font-size:14px;letter-spacing:.1em;color:rgba(13,14,12,.25)}
+.pl-type{font-family:'Pretendard',sans-serif;font-weight:400;font-size:12px;color:var(--fog);letter-spacing:.03em}
+.pl-desc{font-family:'Pretendard',sans-serif;font-weight:400;font-size:13px;line-height:1.8;color:rgba(13,14,12,.52);letter-spacing:.02em}
+
+/* ══════════════════════
+   S6. BEGINS — 감성
+══════════════════════ */
+.s-begins{background:var(--forest);padding:140px 52px;text-align:center;position:relative;overflow:hidden}
+.beg-amb{position:absolute;inset:0;background:radial-gradient(ellipse 65% 55% at 50% 100%,rgba(120,95,70,.22) 0%,transparent 60%);pointer-events:none}
+.beg-in{position:relative;z-index:2;max-width:700px;margin:0 auto}
+.beg-ey{font-family:'DM Sans',sans-serif;font-weight:300;font-size:9px;letter-spacing:.4em;text-transform:uppercase;color:rgba(224,208,188,.38);margin-bottom:26px}
+.beg-sl{font-family:'Pretendard',sans-serif;font-weight:900;font-size:clamp(36px,5.5vw,64px);line-height:1.15;letter-spacing:-.03em;color:var(--ivory);margin-bottom:18px}
+.beg-en{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:clamp(13px,1.8vw,18px);color:rgba(242,237,227,.42);letter-spacing:.01em}
+
+/* ══════════════════════
+   S7. WHY — 실용
+══════════════════════ */
+.s-why{background:var(--cream);padding:120px 52px}
+.why-top{max-width:520px;margin-bottom:56px}
+.why-ey{font-family:'DM Sans',sans-serif;font-weight:300;font-size:9px;letter-spacing:.38em;text-transform:uppercase;color:var(--fog);margin-bottom:14px}
+.why-h{font-family:'Pretendard',sans-serif;font-weight:900;font-size:clamp(28px,4vw,48px);line-height:1.1;letter-spacing:-.03em;color:var(--ink)}
+.why-h em{font-family:'Noto Serif KR',serif;font-style:italic;font-weight:400;font-size:.96em;color:#8B7355}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(13,14,12,.1)}
+.why-card{background:#FFFFFF;padding:36px 30px;transition:background .25s;border-bottom:2px solid transparent}
+.why-card:hover{background:var(--ivory);border-bottom-color:var(--terra)}
+.wc-num{font-family:'Fraunces',serif;font-weight:700;font-style:italic;font-size:40px;color:rgba(28,24,20,.12);line-height:1;margin-bottom:14px;letter-spacing:-.03em}
+.wc-title{font-family:'Pretendard',sans-serif;font-weight:700;font-size:15px;letter-spacing:.02em;color:var(--ink);margin-bottom:10px}
+.wc-copy{font-size:14px;line-height:1.85;color:rgba(13,14,12,.62);letter-spacing:.02em;margin-bottom:16px;font-weight:400}
+.wc-tag{font-family:'DM Sans',sans-serif;font-weight:500;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);border:1px solid rgba(196,88,42,.3);padding:5px 12px;display:inline-block}
+
+/* ══════════════════════
+   S8. CTA — 감성
+══════════════════════ */
+.s-cta{background:var(--forest);padding:140px 52px;text-align:center;position:relative;overflow:hidden}
+.cta-bg-t{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Fraunces',serif;font-weight:900;font-size:clamp(110px,18vw,220px);white-space:nowrap;color:rgba(224,208,188,.03);pointer-events:none;user-select:none;letter-spacing:-.05em}
+.cta-in{position:relative;z-index:2;max-width:580px;margin:0 auto}
+.cta-ey{font-family:'DM Sans',sans-serif;font-weight:300;font-size:9px;letter-spacing:.4em;text-transform:uppercase;color:rgba(224,208,188,.38);margin-bottom:28px}
+.cta-h{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(44px,8vw,86px);line-height:.93;letter-spacing:-.035em;color:var(--ivory);margin-bottom:10px}
+.cta-h .hl{color:var(--sand)}
+.cta-sub{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:clamp(15px,2.2vw,22px);color:rgba(242,237,227,.3);margin-bottom:52px;letter-spacing:.01em}
+.cta-form{display:flex;gap:0;max-width:440px;margin:0 auto 14px}
+.cta-inp{flex:1;background:transparent;border:none;border-bottom:1px solid rgba(242,237,227,.18);color:var(--ivory);font-family:'Pretendard',sans-serif;font-weight:400;font-size:14px;padding:14px 12px 14px 0;outline:none;letter-spacing:.03em;transition:border-color .3s}
+.cta-inp::placeholder{color:rgba(242,237,227,.18)}
+.cta-inp:focus{border-color:rgba(224,208,188,.55)}
+.cta-btn{background:var(--ivory);border:none;color:var(--ink);font-family:'DM Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.24em;text-transform:uppercase;padding:14px 26px;cursor:pointer;transition:background .25s,transform .2s;white-space:nowrap}
+.cta-btn:hover{background:var(--cream);transform:translateY(-1px)}
+.cta-note{font-family:'DM Sans',sans-serif;font-weight:300;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(224,208,188,.18)}
+.cta-ok{font-size:14px;color:var(--sand);letter-spacing:.03em;padding:18px 0}
+/* 카카오톡 채널 추가 버튼 */
+.cta-kakao{display:inline-flex;align-items:center;gap:10px;background:#FEE500;color:#1A1210;font-family:'Pretendard',sans-serif;font-weight:700;font-size:15px;padding:16px 40px;border:none;border-radius:8px;cursor:pointer;transition:background .25s,transform .2s;margin-top:32px;letter-spacing:.01em}
+.cta-kakao:hover{background:#F5DC00;transform:translateY(-2px)}
+.cta-kakao svg{flex-shrink:0}
+
+.cta-close{margin-top:60px;padding-top:36px;border-top:1px solid rgba(224,208,188,.08)}
+.cta-close-copy{font-family:'Noto Serif KR',serif;font-weight:300;font-style:italic;font-size:clamp(13px,1.8vw,16px);color:rgba(224,208,188,.25);letter-spacing:.02em}
+.cta-close-br{font-family:'DM Sans',sans-serif;font-weight:600;font-size:9px;letter-spacing:.32em;text-transform:uppercase;color:rgba(224,208,188,.18);margin-top:5px}
+
+/* ── FOOTER ── */
+footer{background:var(--forest2);padding:34px 52px;display:flex;justify-content:space-between;align-items:center}
+.f-logo{font-family:'DM Sans',sans-serif;font-weight:600;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:rgba(242,237,227,.18)}
+.f-links{display:flex;gap:18px}
+.f-links a{font-family:'DM Sans',sans-serif;font-weight:300;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,237,227,.13);text-decoration:none;transition:color .25s}
+.f-links a:hover{color:rgba(224,208,188,.4)}
+.f-copy{font-family:'DM Sans',sans-serif;font-weight:300;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(242,237,227,.1)}
+
+/* ── REVEAL ── */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.25,.46,.45,.94),transform .9s cubic-bezier(.25,.46,.45,.94)}
+.rv.on{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.17s}.d3{transition-delay:.26s}.d4{transition-delay:.35s}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  nav{padding:18px 24px}.n-menu{display:none}
+  .hero-body{padding:0 24px 64px}.hero-corner{display:none}
+  .hero-foot{position:relative;bottom:auto;left:auto;right:auto;padding:20px 0 0;flex-direction:column;align-items:flex-start;gap:12px}
+  .s-story{grid-template-columns:1fr;padding:80px 24px;gap:40px}
+  .st-num{font-size:80px}
+  .s-five{flex-direction:column;padding:80px 24px;gap:40px}
+  .five-r{max-width:100%}
+  .s-mat{padding:80px 24px}.mat-in{grid-template-columns:1fr;gap:48px}
+  .s-prod{padding:80px 24px}.prod-top{flex-direction:column;align-items:flex-start;gap:10px}.prod-note{text-align:left}
+  .prod-lines{grid-template-columns:1fr}.pl-cat{padding:40px 24px}
+  .s-begins,.s-cta{padding:100px 24px}
+  .s-why{padding:80px 24px}.why-grid{grid-template-columns:1fr 1fr}
+  .cta-form{flex-direction:column}.cta-btn{width:100%}
+  footer{flex-direction:column;gap:12px;padding:28px 24px;text-align:center}.f-links{justify-content:center}
+  .cur,.cur-r{display:none}
+}
+@media(max-width:560px){.why-grid{grid-template-columns:1fr}}
