@@ -1,14 +1,10 @@
-import Image from "next/image";
-
 export default function Hero() {
   return (
     <section className="s-hero">
       {/* 배경 사진 */}
-      <Image
+      <img
         src="/images/hero-bg.jpg"
         alt="ACESPACE 캠핑 연출"
-        fill
-        priority
         className="hero-bg-img"
       />
       {/* 다크 오버레이 */}
