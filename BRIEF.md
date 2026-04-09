@@ -82,7 +82,7 @@ Natural Luxury — 자연 속 합리적 프리미엄
   material_main: "PVC 쓰지 않습니다. 아이가 숨 쉬는 공간이니까요."
   material_3:    "PVC-Free. FR-Free. PFAS-Free."
   function_pump: "5분이면 됩니다. 나머지 시간은 가족 것입니다."
-  function_sys:  "SOLO, DUO, FULL. 세 동이 연결됩니다. 업계 최초."
+  function_sys:  "ONE, TOGETHER, WHOLE. ACESPACE가 설계한 공간의 방식."
 ```
 
 ---
@@ -156,7 +156,7 @@ T3 보조헤드: clamp(28px, 4vw, 48px)  → Why ACESPACE
 TPU 에어빔     → PVC-Free / FR-Free / PFAS-Free
 OEKO-TEX 인증  → 면원단 국제 안전기준
 내장형 양방향 펌프 → 5분 설치
-커넥터블 3동 시스템 → SOLO · DUO · FULL (업계 최초)
+커넥터블 3동 시스템 → ONE · TOGETHER · WHOLE (업계 최초)
 분리형 세탁 커버   → 캠핑 후 완전 세탁 가능
 ```
 

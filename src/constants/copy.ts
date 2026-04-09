@@ -15,7 +15,7 @@ export const TICKER_ITEMS = [
 
 export const FIVE_FEATURES = [
   { num: "기능 01", title: "내장형 양방향 펌프", body: "별도 펌프 없이 5분 안에 설치 완료. 준비에 쓰는 시간을 최소화합니다." },
-  { num: "기능 02", title: "커넥터블 3동 시스템", body: "SOLO · DUO · FULL. 세 동이 연결됩니다. 업계 최초의 모듈 구조." },
+  { num: "기능 02", title: "커넥터블 3동 시스템", body: "ONE, TOGETHER, WHOLE. ACESPACE가 설계한 공간의 방식." },
   { num: "기능 03", title: "분리형 세탁 커버", body: "커버를 분리해 세탁할 수 있습니다. 다음 추억을 위해." },
 ] as const;
 
@@ -55,7 +55,7 @@ export const PRODUCTS = {
 export const WHY_CARDS = [
   { num: "01", title: "TPU · PVC 없음", copy: "경쟁사 대부분이 PVC를 씁니다. ACESPACE는 TPU를 선택했습니다. 아이가 숨 쉬는 공간이니까요.", tag: "PVC-Free", delay: "d1" },
   { num: "02", title: "5분 설치", copy: "내장형 양방향 펌프. 별도 장비 없이 5분이면 됩니다. 나머지 시간은 가족 것입니다.", tag: "Built-in Pump", delay: "d2" },
-  { num: "03", title: "커넥터블 3동", copy: "SOLO, DUO, FULL. 세 동이 연결됩니다. 업계 최초의 모듈 시스템입니다.", tag: "Industry First", delay: "d3" },
+  { num: "03", title: "커넥터블 3동", copy: "ONE, TOGETHER, WHOLE. ACESPACE가 설계한 공간의 방식.", tag: "ONE·TOGETHER·WHOLE", delay: "d3" },
   { num: "04", title: "OEKO-TEX 인증", copy: "면원단에 OEKO-TEX 국제 안전기준 인증. 아이 피부에 닿는 소재, 숫자로 증명합니다.", tag: "Certified", delay: "d1" },
   { num: "05", title: "분리 세탁 커버", copy: "커버를 분리해 세탁할 수 있습니다. 캠핑 후 완전히 씻어내고 다음 추억을 준비하세요.", tag: "Washable", delay: "d2" },
   { num: "06", title: "Natural Luxury", copy: "자연 속 합리적 프리미엄. 과시가 아닌 경험 중심. 머무는 공간의 분위기까지 설계합니다.", tag: "Atmosphere", delay: "d3" },
