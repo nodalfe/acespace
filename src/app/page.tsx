@@ -1,7 +1,6 @@
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
-import Ticker from "@/components/sections/Ticker";
 import BrandStory from "@/components/sections/BrandStory";
 import FiveMinutes from "@/components/sections/FiveMinutes";
 import Material from "@/components/sections/Material";
@@ -19,7 +18,6 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
-        <Ticker />
         <BrandStory />
         <FiveMinutes />
         <Material />
