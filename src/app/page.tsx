@@ -10,6 +10,7 @@ import SpaceBegins from "@/components/sections/SpaceBegins";
 import Why from "@/components/sections/Why";
 import CTA from "@/components/sections/CTA";
 import Cursor from "@/components/ui/Cursor";
+import FloatingCTA from "@/components/ui/FloatingCTA";
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
         <CTA />
       </main>
       <Footer />
+      <FloatingCTA />
     </>
   );
 }
