@@ -1,53 +1,6 @@
-"use client";
-
-import { useState, useEffect } from "react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
-declare global {
-  interface Window {
-    Kakao: {
-      init: (appKey: string) => void;
-      isInitialized: () => boolean;
-      Channel: {
-        addChannel: (params: { channelPublicId: string }) => void;
-      };
-    };
-  }
-}
-
 export default function CTA() {
-  const [kakaoReady, setKakaoReady] = useState(false);
-
-  useEffect(() => {
-    const initKakao = () => {
-      if (typeof window === "undefined" || !window.Kakao) return false;
-      if (!window.Kakao.isInitialized()) {
-        const appKey = process.env.NEXT_PUBLIC_KAKAO_APP_KEY;
-        if (appKey) {
-          window.Kakao.init(appKey);
-        }
-      }
-      setKakaoReady(true);
-      return true;
-    };
-
-    if (initKakao()) return;
-
-    const interval = setInterval(() => {
-      if (initKakao()) clearInterval(interval);
-    }, 300);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const handleKakaoChannel = () => {
-    if (!kakaoReady || !window.Kakao) {
-      window.open("https://pf.kakao.com/_ZeUTxl", "_blank");
-      return;
-    }
-    window.Kakao.Channel.addChannel({ channelPublicId: "_ZeUTxl" });
-  };
-
   return (
     <section className="s-cta" id="notify">
       <div className="cta-bg-t">ACESPACE</div>
@@ -57,10 +10,11 @@ export default function CTA() {
         <div className="cta-sub">2026년 9월, 가장 먼저 만나보세요.</div>
 
         {/* 카카오톡 채널 추가 버튼 */}
-        <button
-          type="button"
+        <a
+          href="https://pf.kakao.com/_ZeUTxl/friend"
+          target="_blank"
+          rel="noopener"
           className="cta-kakao"
-          onClick={handleKakaoChannel}
         >
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -71,7 +25,7 @@ export default function CTA() {
             />
           </svg>
           런칭 알림받기
-        </button>
+        </a>
 
         <div className="cta-close">
           <div className="cta-close-copy">가족의 행복을 담는, 단 하나의 공간.</div>

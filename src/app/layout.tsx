@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { Fraunces, DM_Sans, Noto_Serif_KR } from "next/font/google";
 import "./globals.css";
 
@@ -55,13 +54,7 @@ export default function RootLayout({
       lang="ko"
       className={`${fraunces.variable} ${dmSans.variable} ${notoSerifKR.variable}`}
     >
-      <body>
-        {children}
-        <Script
-          src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js"
-          strategy="afterInteractive"
-        />
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
