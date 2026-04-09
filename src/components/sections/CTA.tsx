@@ -11,7 +11,7 @@ export default function CTA() {
 
         {/* 카카오톡 채널 추가 버튼 */}
         <a
-          href="https://pf.kakao.com/_ZeUTxl/friend"
+          href="https://pf.kakao.com/_BJudX/friend"
           target="_blank"
           rel="noopener"
           className="cta-kakao"
