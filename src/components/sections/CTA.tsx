@@ -16,52 +16,36 @@ declare global {
 }
 
 export default function CTA() {
-  const [submitted, setSubmitted] = useState(false);
   const [kakaoReady, setKakaoReady] = useState(false);
 
   useEffect(() => {
-    const checkKakao = () => {
-      if (window.Kakao) {
-        if (!window.Kakao.isInitialized()) {
-          const appKey = process.env.NEXT_PUBLIC_KAKAO_APP_KEY;
-          if (appKey) {
-            window.Kakao.init(appKey);
-          }
+    const initKakao = () => {
+      if (typeof window === "undefined" || !window.Kakao) return false;
+      if (!window.Kakao.isInitialized()) {
+        const appKey = process.env.NEXT_PUBLIC_KAKAO_APP_KEY;
+        if (appKey) {
+          window.Kakao.init(appKey);
         }
-        setKakaoReady(true);
       }
+      setKakaoReady(true);
+      return true;
     };
 
-    // SDK가 이미 로드된 경우
-    if (window.Kakao) {
-      checkKakao();
-      return;
-    }
+    if (initKakao()) return;
 
-    // SDK 로드 대기
     const interval = setInterval(() => {
-      if (window.Kakao) {
-        checkKakao();
-        clearInterval(interval);
-      }
-    }, 200);
+      if (initKakao()) clearInterval(interval);
+    }, 300);
 
     return () => clearInterval(interval);
   }, []);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const email = new FormData(e.currentTarget).get("email") as string;
-    if (email) {
-      // TODO: 실제 이메일 수집 API 연동 (Mailchimp / Stibee / Google Sheets)
-      setSubmitted(true);
-    }
-  };
-
   const handleKakaoChannel = () => {
-    if (kakaoReady && window.Kakao) {
-      window.Kakao.Channel.addChannel({ channelPublicId: "_ZeUTxl" });
+    if (!kakaoReady || !window.Kakao) {
+      window.open("https://pf.kakao.com/_ZeUTxl", "_blank");
+      return;
     }
+    window.Kakao.Channel.addChannel({ channelPublicId: "_ZeUTxl" });
   };
 
   return (
@@ -71,27 +55,6 @@ export default function CTA() {
         <div className="cta-ey">Coming Soon · 2026년 9월 런칭 예정</div>
         <h2 className="cta-h">그 날,<br /><span className="hl">함께하세요.</span></h2>
         <div className="cta-sub">2026년 9월, 가장 먼저 만나보세요.</div>
-
-        {!submitted ? (
-          <>
-            <form className="cta-form" onSubmit={handleSubmit}>
-              <input
-                type="email"
-                name="email"
-                className="cta-inp"
-                placeholder="이메일을 입력해주세요"
-                required
-                autoComplete="email"
-              />
-              <button type="submit" className="cta-btn">알림 받기</button>
-            </form>
-            <div className="cta-note">얼리버드 10% 할인 · 신제품 선공개 · 2026년 9월 런칭</div>
-          </>
-        ) : (
-          <div className="cta-ok" style={{ display: "block" }}>
-            ✦ &nbsp; 감사합니다. 런칭 소식을 가장 먼저 전해드리겠습니다.
-          </div>
-        )}
 
         {/* 카카오톡 채널 추가 버튼 */}
         <button
