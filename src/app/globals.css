@@ -93,19 +93,15 @@ nav.scrolled{background:rgba(20,16,14,.97);backdrop-filter:blur(16px);border-bot
 /* ══════════════════════
    S2. STORY — 감성
 ══════════════════════ */
-.s-story{background:var(--ivory);padding:128px 52px;display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:center}
-.st-left{}
-.st-num{font-family:'Fraunces',serif;font-weight:900;font-size:130px;line-height:1;color:rgba(28,24,20,.05);letter-spacing:-.05em;user-select:none;margin-bottom:-24px}
-.st-eyebrow{font-family:'DM Sans',sans-serif;font-weight:300;font-size:9px;letter-spacing:.38em;text-transform:uppercase;color:var(--fog);margin-bottom:18px;display:flex;align-items:center;gap:12px}
+.s-story{background:var(--cream);padding:128px 52px;display:flex;flex-direction:column;gap:64px;max-width:800px;margin:0 auto}
+.st-eyebrow{font-family:'DM Sans',sans-serif;font-weight:300;font-size:9px;letter-spacing:.38em;text-transform:uppercase;color:var(--fog);margin-bottom:28px;display:flex;align-items:center;gap:12px}
 .st-eyebrow::before{content:'';width:24px;height:1px;background:var(--fog)}
-.st-h2{font-family:'Pretendard',sans-serif;font-weight:900;font-size:clamp(36px,5vw,64px);line-height:1.08;letter-spacing:-.03em;color:var(--ink)}
-.st-h2 em{font-family:'Noto Serif KR',serif;font-style:italic;font-weight:400;font-size:.92em;color:#8B7355;display:block;line-height:1.3}
-.st-right{display:flex;flex-direction:column;gap:28px}
-.st-quote{font-size:17px;line-height:2;color:rgba(13,14,12,.76);letter-spacing:.015em;padding-left:22px;border-left:2px solid var(--sand)}
+.st-quote{font-size:17px;line-height:2;color:rgba(13,14,12,.65);letter-spacing:.015em;padding-left:22px;border-left:2px solid var(--sand);margin-bottom:28px}
 .st-quote strong{color:var(--ink);font-weight:600}
-.st-hr{width:36px;height:1px;background:rgba(139,115,85,.3)}
+.st-hr{width:36px;height:1px;background:rgba(139,115,85,.3);margin-bottom:28px}
 .st-body{font-size:14.5px;line-height:2;color:rgba(13,14,12,.62);letter-spacing:.02em;font-weight:400}
-.st-sub{font-family:'Noto Serif KR',serif;font-weight:300;font-style:italic;font-size:16px;color:#8B7355;letter-spacing:.02em}
+.st-h2{font-family:'Pretendard',sans-serif;font-weight:900;font-size:clamp(36px,5vw,64px);line-height:1.15;letter-spacing:-.03em;color:var(--ink)}
+.st-h2 em{font-family:'Noto Serif KR',serif;font-style:italic;font-weight:400;font-size:.92em;color:#8B7355;display:block;line-height:1.3;margin-top:4px}
 
 /* ══════════════════════
    S3. 5분 — 실용
@@ -246,8 +242,7 @@ footer{background:var(--forest2);padding:34px 52px;display:flex;justify-content:
   nav{padding:5px 24px}.n-menu{display:none}.n-hamburger{display:flex}
   .hero-body{padding:0 24px 62px}.hero-corner{display:none}
   .hero-foot{position:relative;bottom:auto;left:auto;right:auto;padding:20px 0 0;flex-direction:column;align-items:flex-start;gap:12px}
-  .s-story{grid-template-columns:1fr;padding:80px 24px;gap:40px}
-  .st-num{font-size:80px}
+  .s-story{padding:80px 24px;gap:40px}
   .s-five{flex-direction:column;padding:80px 24px;gap:40px}
   .five-r{max-width:100%}
   .s-mat{padding:80px 24px}.mat-in{grid-template-columns:1fr;gap:48px}
