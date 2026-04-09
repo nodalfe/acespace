@@ -70,7 +70,7 @@ export default function CTA() {
               fill="#1A1210"
             />
           </svg>
-          카카오톡 채널 추가
+          런칭 알림받기
         </button>
 
         <div className="cta-close">

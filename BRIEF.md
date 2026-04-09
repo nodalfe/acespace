@@ -222,16 +222,14 @@ server {
 
 ---
 
-## 이메일 수집
+## 런칭 알림 수집
 
 ```
-현재: 프론트엔드 only (폼 제출 시 성공 메시지만 표시)
-목표: 실제 이메일 저장
-
-추천 연동:
-  A. Mailchimp API  → 마케팅 자동화 가능
-  B. Stibee API     → 한국어 뉴스레터 최적화
-  C. Google Sheets  → 간단한 수집만 필요할 때
+방식:        카카오톡 채널 추가
+버튼 텍스트: "런칭 알림받기"
+버튼 스타일: ACESPACE 브랜드 컬러 (ivory/sand)
+채널 ID:     _ZeUTxl
+기능:        Kakao.Channel.addChannel({ channelPublicId: '_ZeUTxl' })
 ```
 
 ---
