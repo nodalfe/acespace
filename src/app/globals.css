@@ -37,7 +37,7 @@ body{background:var(--ivory);color:var(--ink);font-family:'Pretendard',sans-seri
 nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:20px 52px;transition:background .4s,backdrop-filter .4s;background:rgba(28,24,20,.45);backdrop-filter:blur(8px)}
 nav.scrolled{background:rgba(20,16,14,.97);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06)}
 .n-logo{font-family:'DM Sans',sans-serif;font-weight:600;font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--ivory)}
-.n-logo-img{display:block;height:32px;width:auto;filter:brightness(10)}
+.n-logo-img{display:block;height:32px;width:auto;filter:brightness(10) saturate(0)}
 .n-menu{display:flex;align-items:center;gap:36px}
 .n-link{font-family:'Pretendard',sans-serif;font-weight:500;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:rgba(242,237,227,.82);text-decoration:none;transition:color .25s}
 .n-link:hover{color:var(--ivory);letter-spacing:.14em}
