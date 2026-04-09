@@ -6,7 +6,7 @@ export default function CTA() {
       <div className="cta-bg-t">ACESPACE</div>
       <ScrollReveal className="cta-in">
         <div className="cta-ey">Coming Soon · 2026년 9월 런칭 예정</div>
-        <h2 className="cta-h">그 날,<br /><span className="hl">함께하세요.</span></h2>
+        <h2 className="cta-h">가장 먼저,<br /><span className="hl">ACESPACE.</span></h2>
         <div className="cta-sub">2026년 9월, 가장 먼저 만나보세요.</div>
 
         {/* 카카오톡 채널 추가 버튼 */}

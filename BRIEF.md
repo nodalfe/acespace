@@ -76,7 +76,7 @@ Natural Luxury — 자연 속 합리적 프리미엄
   brand_story:   "설치하느라 지쳐 아이와 눈을 못 맞추는 순간이 있었습니다. 그 순간을 없애고 싶었습니다."
   atmosphere:    "공간이 시작되면, 추억이 따라옵니다."
   closing:       "가족이 머문 공간은 추억이 됩니다. ACESPACE"
-  cta_heading:   "그 날, 함께하세요."
+  cta_heading:   "가장 먼저, ACESPACE."
 
 실용:
   material_main: "PVC 쓰지 않습니다. 아이가 숨 쉬는 공간이니까요."
