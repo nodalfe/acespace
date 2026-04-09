@@ -19,7 +19,7 @@ function ProductLine({ data, variant = "" }: ProductLineProps) {
         {data.items.map((item, i) => (
           <div key={i} className="pl-item">
             <div className="pl-item-top">
-              <span className="pl-name pl-tbd">———</span>
+              <span className="pl-name pl-tbd">COMING SOON</span>
               <span className="pl-type">{item.type}</span>
             </div>
             <div className="pl-desc">{item.desc}</div>

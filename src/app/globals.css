@@ -179,7 +179,7 @@ nav.scrolled{background:rgba(20,16,14,.97);backdrop-filter:blur(16px);border-bot
 .pl-item:hover{background:rgba(13,14,12,.02);margin:0 -16px;padding:20px 16px}
 .pl-item-top{display:flex;align-items:baseline;gap:12px;margin-bottom:5px}
 .pl-name{font-family:'Pretendard',sans-serif;font-weight:700;font-size:15px;letter-spacing:-.01em;color:var(--ink)}
-.pl-tbd{font-family:'DM Sans',sans-serif;font-weight:400;font-size:14px;letter-spacing:.1em;color:rgba(13,14,12,.25)}
+.pl-tbd{font-family:'DM Sans',sans-serif;font-weight:400;font-size:11px;letter-spacing:.15em;color:rgba(13,14,12,.25)}
 .pl-type{font-family:'Pretendard',sans-serif;font-weight:400;font-size:12px;color:var(--fog);letter-spacing:.03em}
 .pl-desc{font-family:'Pretendard',sans-serif;font-weight:400;font-size:13px;line-height:1.8;color:rgba(13,14,12,.52);letter-spacing:.02em}
 
