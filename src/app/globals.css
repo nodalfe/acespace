@@ -47,7 +47,8 @@ nav.scrolled{background:rgba(20,16,14,.97);backdrop-filter:blur(16px);border-bot
    HERO
 ══════════════════════ */
 .s-hero{min-height:100vh;background:var(--forest);display:flex;flex-direction:column;position:relative;overflow:hidden}
-.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(224,208,188,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(224,208,188,.04) 1px,transparent 1px);background-size:72px 72px;pointer-events:none}
+.hero-bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;z-index:0}
+.hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(to bottom,rgba(28,24,20,.45) 0%,rgba(28,24,20,.55) 50%,rgba(28,24,20,.75) 100%);pointer-events:none}
 .hero-vline{position:absolute;top:0;bottom:0;width:1px;background:rgba(224,208,188,.06)}
 .hero-vline1{right:160px} .hero-vline2{right:320px}
 .hero-corner{position:absolute;top:108px;right:52px;display:flex;flex-direction:column;align-items:flex-end;gap:8px;animation:fu .8s ease .6s both}

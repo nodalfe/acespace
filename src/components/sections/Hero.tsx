@@ -1,7 +1,19 @@
+import Image from "next/image";
+
 export default function Hero() {
   return (
     <section className="s-hero">
-      <div className="hero-grid"></div>
+      {/* 배경 사진 */}
+      <Image
+        src="/images/hero-bg.jpg"
+        alt="ACESPACE 캠핑 연출"
+        fill
+        priority
+        className="hero-bg-img"
+      />
+      {/* 다크 오버레이 */}
+      <div className="hero-overlay"></div>
+
       <div className="hero-vline hero-vline1"></div>
       <div className="hero-vline hero-vline2"></div>
 
