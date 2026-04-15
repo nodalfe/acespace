@@ -1,7 +1,7 @@
 export default function FloatingCTA() {
   return (
     <a
-      href="https://pf.kakao.com/_ZeUTxl/friend"
+      href="https://pf.kakao.com/_BJudX/friend"
       target="_blank"
       rel="noopener"
       className="floating-cta"
